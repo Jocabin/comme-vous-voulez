@@ -56,12 +56,13 @@ export default function SearchBar({ }) {
                                 {radios && radios.map(el => (
                                         <fieldset key={el.value} className="flex gap-2">
                                                 <input
+                                                        id={"radio-" + el.value}
                                                         type="radio"
                                                         name="source"
                                                         defaultChecked={el.value === source}
                                                         value={el.value}
                                                 />
-                                                <label>{el.label}</label>
+                                                <label htmlFor={"radio-" + el.value}>{el.label}</label>
                                         </fieldset>
                                 ))}
                         </div>
