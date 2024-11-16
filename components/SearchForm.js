@@ -34,8 +34,13 @@ export default function SearchBar({ }) {
                 router.push(`/?source=${source}&search=${searchQuery}`)
         }
 
+        function reset(e) {
+                e.preventDefault()
+                router.push('/')
+        }
+
         return (
-                <form className="flex flex-col gap-2 mt-8" onSubmit={search}>
+                <form className="flex flex-col gap-2 mt-8" onSubmit={search} onReset={reset}>
                         <div className="flex gap-2">
                                 <input
                                         type="text"
